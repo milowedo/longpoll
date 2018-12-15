@@ -1,14 +1,19 @@
 package com.restController;
 
+import com.LongPolling.HangingRequest;
 import com.LongPolling.RequestPromise;
 import com.entity.Customer;
 import com.LongPolling.Overseer;
 import com.exceptionHandlingStuff.CustomerNotFoundException;
 import com.service.ServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api")
@@ -24,14 +29,16 @@ public class CustomerRestController{
     }
 
     @GetMapping("/subscribe")
-    public RequestPromise handleAsync(){
+    public RequestPromise handleAsync(HttpSession session){
         RequestPromise output = new RequestPromise(customerService);
-        System.out.println(Thread.currentThread());
+        output.setSession(session);
         overseer.subscribe(output);
+
+        System.out.println(Thread.currentThread());
         return output;
     }
 
-    @GetMapping("/observer/{customerId}")
+    @GetMapping("/trigger/{customerId}")
     public ResponseEntity<?> updateCustomer(@PathVariable int customerId){
         Customer temp = customerService.getCustomer(customerId);
         customerService.saveCustomer(temp);

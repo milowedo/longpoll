@@ -2,9 +2,10 @@ package com.config;
 
 import java.beans.PropertyVetoException;
 import java.util.Properties;
-import java.util.logging.Logger;
 import javax.sql.DataSource;
 import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.*;
 import org.springframework.core.env.Environment;
@@ -22,14 +23,14 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @EnableTransactionManagement
 @ComponentScan("com")
 @PropertySource({ "classpath:persistence-mysql.properties" })
-public class DemoAppConfig implements WebMvcConfigurer {
+public class AppConfiguration implements WebMvcConfigurer {
 
 	private final Environment env;
-	
-	private Logger logger = Logger.getLogger(getClass().getName());
+
+	private Logger logger = LoggerFactory.getLogger(AppConfiguration.class);
 
 	@Autowired
-	public DemoAppConfig(Environment env) {
+	public AppConfiguration(Environment env) {
 		this.env = env;
 	}
 
@@ -47,17 +48,16 @@ public class DemoAppConfig implements WebMvcConfigurer {
 		catch (PropertyVetoException exc) {
 			throw new RuntimeException(exc);
 		}
+
+		logger.info("jdbc.url = " + env.getProperty("jdbc.url"));
+		logger.info("jdbc.user = " + env.getProperty("jdbc.user"));
 		
-		// for sanity's sake, let's log url and user ... just to make sure we are reading the data
-		logger.info("jdbc.url=" + env.getProperty("jdbc.url"));
-		logger.info("jdbc.user=" + env.getProperty("jdbc.user"));
-		
-		// set database connection props
+		// set database connection properties
 		myDataSource.setJdbcUrl(env.getProperty("jdbc.url"));
 		myDataSource.setUser(env.getProperty("jdbc.user"));
 		myDataSource.setPassword(env.getProperty("jdbc.password"));
 		
-		// set connection pool props
+		// set connection pool properties
 		myDataSource.setInitialPoolSize(getIntProperty("connection.pool.initialPoolSize"));
 		myDataSource.setMinPoolSize(getIntProperty("connection.pool.minPoolSize"));
 		myDataSource.setMaxPoolSize(getIntProperty("connection.pool.maxPoolSize"));		

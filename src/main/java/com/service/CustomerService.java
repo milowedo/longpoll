@@ -58,7 +58,7 @@ public class CustomerService implements ServiceInterface {
     @Override
     @Transactional
     public Customer getCustomer(int theId) {
-        return customerDAO.getCustomer(5);
+        return customerDAO.getCustomer(theId);
     }
 
     @Override

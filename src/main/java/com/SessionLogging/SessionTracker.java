@@ -1,7 +1,10 @@
-package com.config;
+package com.SessionLogging;
 
 import com.codahale.metrics.Counter;
 import com.codahale.metrics.MetricRegistry;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionEvent;
@@ -13,29 +16,31 @@ import java.util.List;
 @WebListener
 public class SessionTracker implements HttpSessionListener {
 
-    private final Counter counterOfActiveSessions;
+    private final Counter activeSessionsCount;
     private final List<HttpSession> runningSessions;
+
+    private final Logger logger = LoggerFactory.getLogger(HttpSessionListener.class);
+
 
     public SessionTracker() {
         super();
-        counterOfActiveSessions = new MetricRegistry()
+        activeSessionsCount = new MetricRegistry()
                 .counter("web.sessions.active.count");
         runningSessions = new LinkedList<>();
     }
 
     public void sessionCreated(final HttpSessionEvent event) {
-        System.out.println("session created: "+ event.getSession().getId());
+        logger.info("session id "+ event.getSession().getId());
         this.runningSessions.add(event.getSession());
-                counterOfActiveSessions.inc();
-        System.out.println(("TOTAL: " + this.counterOfActiveSessions.getCount()));
+                activeSessionsCount.inc();
+        logger.info(("TOTAL SESSION: " + this.activeSessionsCount.getCount()));
     }
     public void sessionDestroyed(final HttpSessionEvent event) {
-        counterOfActiveSessions.dec();
-        System.out.println("session destroyed " + event.getSession().getId() +
-                " TOTAL: " + counterOfActiveSessions.getCount());
+        activeSessionsCount.dec();
+        logger.info("session destroyed " + event.getSession().getId() +
+                "TOTAL SESSIONS: " + activeSessionsCount.getCount());
         this.runningSessions.remove(event.getSession());
-        System.out.println("current open sessions: ");
-        runningSessions.forEach((System.out::println));
-        System.out.println();
+        logger.info("current open sessions: \n");
+        runningSessions.forEach((element) -> logger.info(String.valueOf(element)));
     }
 }

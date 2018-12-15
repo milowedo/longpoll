@@ -1,5 +1,7 @@
 package com.LongPolling;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import java.util.Queue;
@@ -8,13 +10,17 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 @Component
 public class Overseer {
 
+    static final long refreshTime = 3000;
+    private final Logger logger = LoggerFactory.getLogger(Overseer.class);
+
     private final Queue<HangingRequest> responses = new ConcurrentLinkedDeque<>();
 
     private void executeRequests(){
         responses.forEach((hangingRequest -> {
-            System.out.println(Thread.currentThread() + " IN CLASS:: " + this.getClass().getSimpleName() + " EXECUTING: executeRequests()");
+            logger.info("");
             if (hangingRequest.execute()) {
                 responses.remove(hangingRequest);
+                hangingRequest.killSession();
             }
         }));
     }
@@ -23,7 +29,7 @@ public class Overseer {
         this.responses.add(hangingRequest);
     }
 
-    @Scheduled(fixedRate = 6000)
+    @Scheduled(fixedRate = refreshTime)
     public void seeWhetherAnythingCanBeExecuted(){
         this.executeRequests();
     }
