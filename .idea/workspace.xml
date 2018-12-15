@@ -7,6 +7,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf6c9992-7fa5-4e49-843a-9c99a37d6479" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/SessionLogging/SessionTracker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/config/AppConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/LongPolling/HangingRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/LongPolling/Overseer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/LongPolling/RequestPromise.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/SessionLogging/SessionTracker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/config/AppConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/config/MyInterceptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/config/SecurityConfiguration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/dao/CustomerDAOImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/restController/CustomerRestController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/slf4j-api-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/slf4j-jdk14-1.7.25.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/MyInterceptor.java___jb_tmp___" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/LongPolling/HangingRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/LongPolling/HangingRequest.java" afterDir="false" />
@@ -18,74 +35,75 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/config/SessionTracker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/SessionLogging/SessionTracker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dao/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dao/CustomerDAOImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/restController/CustomerRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/restController/CustomerRestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/LongPolling/HangingRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/LongPolling/HangingRequest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/LongPolling/Overseer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/LongPolling/Overseer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/LongPolling/RequestPromise.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/LongPolling/RequestPromise.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/config/DemoAppConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/config/DemoSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/config/DemoAppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/config/DemoAppConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/config/DemoSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/config/DemoSecurityConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/config/MySpringMvcDispatcherServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/config/MySpringMvcDispatcherServletInitializer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/config/SessionTracker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/config/SessionTracker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/config/SessionTracker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/dao/CustomerDAOImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/dao/CustomerDAOImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/restController/CustomerRestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/restController/CustomerRestController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/LongPolling/HangingRequest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/LongPolling/Overseer.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/LongPolling/RequestPromise.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/DemoAppConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/DemoSecurityConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/MySpringMvcDispatcherServletInitializer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/SecurityWebApplicationInitializer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/DemoSecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/config/SecurityConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/MySpringMvcDispatcherServletInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/config/MySpringMvcDispatcherServletInitializer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/SecurityWebApplicationInitializer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/config/SecurityWebApplicationInitializer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/config/SessionTracker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/dao/CustomerDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/dao/CustomerDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/dao/CustomerDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/dao/CustomerDAOImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/entity/Customer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/exceptionHandlingStuff/CustomerErrorResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/exceptionHandlingStuff/CustomerExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/exceptionHandlingStuff/CustomerNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/entity/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/entity/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/exceptionHandlingStuff/CustomerErrorResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/exceptionHandlingStuff/CustomerErrorResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/exceptionHandlingStuff/CustomerExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/exceptionHandlingStuff/CustomerExceptionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/exceptionHandlingStuff/CustomerNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/exceptionHandlingStuff/CustomerNotFoundException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/restController/CustomerRestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/service/CustomerService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/service/CustomerService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/service/ServiceInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/persistence-mysql.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/c3p0-0.9.5.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/classmate-1.3.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/dom4j-1.6.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/hibernate-core-5.2.16.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jackson-core-2.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jackson-databind-2.9.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jandex-2.0.3.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/javassist-3.22.0-GA.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/javax.servlet-api-3.1.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/javax.servlet.jsp-api-2.3.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jaxb-api-2.3.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jboss-logging-3.3.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/lombok-1.18.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/mchange-commons-java-0.2.11.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/metrics-core-3.0.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/mysql-connector-java-5.1.45.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/service/CustomerService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/service/CustomerService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/service/CustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/service/CustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/com/service/ServiceInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/com/service/ServiceInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/classes/persistence-mysql.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/classes/persistence-mysql.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/antlr-2.7.7.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/antlr-2.7.7.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/c3p0-0.9.5.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/c3p0-0.9.5.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/classmate-1.3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/classmate-1.3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/commons-logging-1.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/commons-logging-1.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/dom4j-1.6.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/dom4j-1.6.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/hibernate-commons-annotations-5.0.1.Final.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/hibernate-core-5.2.16.Final.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/hibernate-core-5.2.16.Final.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jackson-annotations-2.9.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/jackson-annotations-2.9.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jackson-core-2.9.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/jackson-core-2.9.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jackson-databind-2.9.5.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/jackson-databind-2.9.5.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jandex-2.0.3.Final.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/jandex-2.0.3.Final.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/javassist-3.22.0-GA.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/javassist-3.22.0-GA.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/javax.servlet-api-3.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/javax.servlet-api-3.1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/javax.servlet.jsp-api-2.3.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/javax.servlet.jsp-api-2.3.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jaxb-api-2.3.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/jaxb-api-2.3.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jboss-logging-3.3.1.Final.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/jboss-logging-3.3.1.Final.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/lombok-1.18.2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/lombok-1.18.2.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/mchange-commons-java-0.2.11.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/mchange-commons-java-0.2.11.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/metrics-core-3.0.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/metrics-core-3.0.1.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/mysql-connector-java-5.1.45.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/mysql-connector-java-5.1.45.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/slf4j-api-1.7.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-aop-5.0.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-beans-5.0.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-context-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-core-5.0.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-expression-5.0.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-jcl-5.0.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-jdbc-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-orm-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-security-config-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-security-core-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-security-web-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-session-1.2.2.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-tx-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-web-5.0.7.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-webmvc-5.0.6.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-aop-5.0.7.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-aop-5.0.7.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-beans-5.0.7.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-beans-5.0.7.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-context-5.0.6.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-context-5.0.6.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-core-5.0.7.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-core-5.0.7.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-expression-5.0.7.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-expression-5.0.7.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-jcl-5.0.7.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-jcl-5.0.7.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-jdbc-5.0.6.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-jdbc-5.0.6.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-orm-5.0.6.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-orm-5.0.6.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-security-config-5.0.6.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-security-config-5.0.6.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-security-core-5.0.6.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-security-core-5.0.6.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-security-web-5.0.6.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-security-web-5.0.6.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-session-1.2.2.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-session-1.2.2.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-tx-5.0.6.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-tx-5.0.6.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-web-5.0.7.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-web-5.0.7.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/WEB-INF/lib/spring-webmvc-5.0.6.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/WEB-INF/lib/spring-webmvc-5.0.6.RELEASE.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/spring-crm-rest/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/longpolling/index.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,7 +127,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="4" />
-          <entry key="java" value="51" />
+          <entry key="java" value="54" />
           <entry key="jsp" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -117,7 +135,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="4" />
-          <entry key="JAVA" value="51" />
+          <entry key="JAVA" value="54" />
           <entry key="JSP" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -125,14 +143,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="18" />
-          <entry key="java" value="2059" />
+          <entry key="java" value="2061" />
           <entry key="jsp" value="6" />
           <entry key="xml" value="64" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2059" />
+          <entry key="JAVA" value="2061" />
           <entry key="JSP" value="6" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="XML" value="64" />
@@ -145,8 +163,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/LongPolling/RequestPromise.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
+            <state relative-caret-position="70">
               <caret line="26" column="111" selection-start-line="26" selection-start-column="111" selection-end-line="26" selection-end-column="111" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/service/CustomerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="268">
+              <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/service/ServiceInterface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="216">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -155,7 +191,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/LongPolling/Overseer.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="142">
-              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,11 +199,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/SessionLogging/SessionTracker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
               <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/LongPolling/HangingRequest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -199,9 +244,10 @@
         <option value="$PROJECT_DIR$/src/main/java/com/config/AppConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/config/SessionTracker.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/CustomerDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/LongPolling/Overseer.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/LongPolling/RequestPromise.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/SessionLogging/SessionTracker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/LongPolling/Overseer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/service/CustomerService.java" />
       </list>
     </option>
   </component>
@@ -225,7 +271,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -303,7 +349,23 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longpolling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="long-polling" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="SessionLogging" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="longpolling" type="b2602c69:ProjectViewProjectNode" />
+              <item name="long-polling" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="longpolling" type="b2602c69:ProjectViewProjectNode" />
@@ -324,7 +386,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544908749745" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544909093739" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../jaxrs-ri-JERSEY-LIB" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -437,17 +499,18 @@
       <workItem from="1544786861376" duration="11775000" />
       <workItem from="1544826674803" duration="375000" />
       <workItem from="1544827104962" duration="13799000" />
-      <workItem from="1544902757421" duration="2889000" />
+      <workItem from="1544902757421" duration="3232000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28838000" />
+    <option name="totallyTimeSpent" value="29181000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4982079" visible="true" weight="0.2217484" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4982079" visible="true" weight="0.2217484" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -458,7 +521,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.44251627" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.44251627" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -522,13 +585,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/ServiceInterface.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -540,13 +596,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="286" column="47" selection-start-line="286" selection-start-column="47" selection-end-line="286" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="31" column="36" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -671,27 +720,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/LongPolling/HangingRequest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/LongPolling/RequestPromise.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        <state relative-caret-position="70">
+          <caret line="26" column="111" selection-start-line="26" selection-start-column="111" selection-end-line="26" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/CustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="60" column="44" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/service/ServiceInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/LongPolling/Overseer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
-          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/LongPolling/RequestPromise.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="26" column="111" selection-start-line="26" selection-start-column="111" selection-end-line="26" selection-end-column="111" />
         </state>
       </provider>
     </entry>
@@ -699,6 +755,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="43" column="43" selection-start-line="43" selection-start-column="43" selection-end-line="43" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/LongPolling/HangingRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
