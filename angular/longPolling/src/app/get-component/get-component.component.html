@@ -1,0 +1,13 @@
+<h3>The get component</h3>
+<div class="container">
+  <input type="text" (keyup)="onNameKeyUp($event)">
+  <button (click)="getProfile()">Get profile</button>
+
+  <div class="row" *ngIf="received">
+    <div class="col-xs-12 col-sm-4">
+      <div class="list-group">
+        <p class="list-group-item">{{received.firstName}} {{received.lastName}}</p>
+      </div>
+    </div>
+  </div>
+</div>

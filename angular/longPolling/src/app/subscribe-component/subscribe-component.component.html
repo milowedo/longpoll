@@ -1,0 +1,17 @@
+<h3>The subscribe component</h3>
+<h5>TODO: request are dropped by spring or a browser -cannot exceed 30sec time</h5>
+<div class="container">
+  <!-- <input type="number" value="customer id" (keyup)="onNameKeyUp($event)"> -->
+  <button (click)="subscribe(true)">subscribe</button>
+  <button (click)="subscribe(false)">unsubscribe</button>
+  <button (click)="removeProfile()">remove customer</button>
+
+  <div class="row" *ngIf="received">
+    <div class="col-xs-12 col-sm-4">
+      <div class="list-group">
+        <h5>New customer has been added!</h5>
+        <p class="list-group-item">{{received.firstName}} {{received.lastName}}</p>
+      </div>
+    </div>
+  </div>
+</div>
