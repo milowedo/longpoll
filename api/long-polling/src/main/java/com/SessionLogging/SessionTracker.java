@@ -30,7 +30,7 @@ public class SessionTracker implements HttpSessionListener {
     }
 
     public void sessionCreated(final HttpSessionEvent event) {
-        logger.info("session id "+ event.getSession().getId());
+        logger.info("session employee_id "+ event.getSession().getId());
         this.runningSessions.add(event.getSession());
                 activeSessionsCount.inc();
         logger.info(("TOTAL SESSION: " + this.activeSessionsCount.getCount()));

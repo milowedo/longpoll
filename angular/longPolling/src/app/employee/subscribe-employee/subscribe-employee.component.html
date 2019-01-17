@@ -1,0 +1,16 @@
+<h3>subscribing component</h3>
+<div class="container">
+  <!-- <input type="number" value="customer id" (keyup)="onNameKeyUp($event)"> -->
+  <button (click)="subscribe(true)">subscribe</button>
+  <button (click)="subscribe(false)">unsubscribe</button>
+  <button (click)="removeProfile()">remove customer</button>
+
+  <div class="row" *ngIf="received">
+    <div class="col-xs-12 col-sm-4">
+      <div class="list-group">
+        <h5>New customer has been added!</h5>
+        <p class="list-group-item">{{received.name}} from {{received.teamName}}</p>
+      </div>
+    </div>
+  </div>
+</div>

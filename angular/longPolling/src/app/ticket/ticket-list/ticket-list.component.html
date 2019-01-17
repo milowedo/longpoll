@@ -1,0 +1,11 @@
+
+<div class="row">
+  <div class="col-10">
+    <hr>
+    <div class="row">
+      <app-ticket
+        *ngFor="let _ticket of tickets" [ticket]="_ticket">
+      </app-ticket>
+    </div>
+  </div>
+</div>

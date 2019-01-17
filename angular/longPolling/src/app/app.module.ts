@@ -1,31 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
-import { SubscribeComponentComponent } from './subscribe-component/subscribe-component.component';
-import {RouterModule} from '@angular/router';
-import { GetComponentComponent } from './get-component/get-component.component';
-import {HTTP_INTERCEPTORS, HttpClient, HttpClientModule} from '@angular/common/http';
 import {HttpResponseInterceptor} from './response-interceptor';
 import {DEFAULT_TIMEOUT, HttpRequestInterceptor} from './request-interceptor';
 import {TokenStorage} from './TokenStorage';
-import { ChangeComponentComponent } from './change-component/change-component.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+
+import { HeaderComponent } from './header/header.component';
+import {DropdownDirective} from './directives/dropdown.directive';
+
+import { GetEmployeeComponent } from './employee/get-employee/get-employee.component';
+import { SubscribeEmployeeComponent } from './employee/subscribe-employee/subscribe-employee.component';
+import { ChangeEmployeeComponent } from './employee/change-employee/change-employee.component';
+import { EmployeeComponent } from './employee/employee.component';
+import {AppRoutingModule} from './app.routing';
+import { TicketComponent } from './ticket/ticket.component';
+import { ChangeTicketComponent } from './ticket/change-ticket/change-ticket.component';
+import { SubscribeTicketComponent } from './ticket/subscribe-ticket/subscribe-ticket.component';
+import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubscribeComponentComponent,
-    GetComponentComponent,
-    ChangeComponentComponent
+    SubscribeEmployeeComponent,
+    GetEmployeeComponent,
+    ChangeEmployeeComponent,
+    HeaderComponent,
+    DropdownDirective,
+    EmployeeComponent,
+    TicketComponent,
+    ChangeTicketComponent,
+    SubscribeTicketComponent,
+    TicketListComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path: '', component: AppComponent},
-      {path: 'first', component: SubscribeComponentComponent},
-      {path: 'second', component: GetComponentComponent},
-    ])
+    AppRoutingModule
   ],
   providers: [
     TokenStorage,

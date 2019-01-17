@@ -1,8 +1,7 @@
 package com.LongPolling;
 
-import com.entity.Customer;
-
-import com.service.ServiceInterface;
+import com.entity.Resolvable;
+import com.services.ServiceInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.async.DeferredResult;
@@ -10,20 +9,20 @@ import org.springframework.web.context.request.async.DeferredResult;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
-public class RequestPromise extends DeferredResult<Customer> implements HangingRequest {
+public class RequestPromise extends DeferredResult<Resolvable> implements HangingRequest {
 
-    private final ServiceInterface customerService;
+    private final ServiceInterface serviceInterface;
     private HttpSession promiseSession;
     private final Logger logger = LoggerFactory.getLogger(RequestPromise.class);
 
 
-    public RequestPromise(ServiceInterface customerService){
-        this.customerService = customerService;
+    public RequestPromise(ServiceInterface serviceInterface){
+        this.serviceInterface = serviceInterface;
     }
 
     public boolean execute() {
         logger.info("");
-        Optional<Customer> resolved = customerService.resolve();
+        Optional<Resolvable> resolved = serviceInterface.resolve();
         if( (System.currentTimeMillis() - this.promiseSession.getCreationTime() + Overseer.refreshTime) > 30000 ) {
             this.setErrorResult("timedOut");
             return true;

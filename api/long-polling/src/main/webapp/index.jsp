@@ -5,10 +5,17 @@
 
 <hr>
 
-<a href="${pageContext.request.contextPath}/api/subscribe">subscribe</a>
+<a href="${pageContext.request.contextPath}/employee/subscribe">subscribe</a>
+<a href="${pageContext.request.contextPath}/employee/trigger/2">change data</a>
+<a href="${pageContext.request.contextPath}/employee/employee/2">get data</a>
+
 <hr>
-<a href="${pageContext.request.contextPath}/api/trigger/5">change data</a>
-<a href="${pageContext.request.contextPath}/api/customer/5">get data</a>
+
+<a href="${pageContext.request.contextPath}/ticket/subscribe">subscribe</a>
+<a href="${pageContext.request.contextPath}/ticket/trigger/2">change data</a>
+<a href="${pageContext.request.contextPath}/ticket/employee/2">get data</a>
+
+<hr>
 
 </body>
 </html>

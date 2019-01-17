@@ -10,7 +10,7 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 @Component
 public class Overseer {
 
-    static final long refreshTime = 3000;
+    static final long refreshTime = 1000;
     private final Logger logger = LoggerFactory.getLogger(Overseer.class);
 
     private final Queue<HangingRequest> responses = new ConcurrentLinkedDeque<>();
