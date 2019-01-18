@@ -18,30 +18,7 @@ public class EmployeeServiceImpl extends ServicePoll implements EmployeeServiceI
     public EmployeeServiceImpl(EmployeeDaoInterface employeeDaoInterface) {
         this.employeeDaoInterface = employeeDaoInterface;
     }
-
-//    @Transactional
-//    public Optional<Resolvable> resolve() {
-//        if (!isNewEmployeeAdded) {
-//            return Optional.empty();
-//        } else {
-//            EmployeeServiceImpl thisObj = this;
-//
-//            Employee changedEmployee = getEmployee(2);
-//            System.out.println(changedEmployee.toString());
-//
-//            new java.util.Timer().schedule(
-//                    new java.util.TimerTask() {
-//                        @Override
-//                        public void run() {
-//                            thisObj.isNewEmployeeAdded = false;
-//                        }
-//                    },
-//                    500
-//            );
-//            return Optional.of(changedEmployee);
-//        }
-//    }
-
+    
     @Override
     @Transactional
     public List<Employee> getAllEmployees() {

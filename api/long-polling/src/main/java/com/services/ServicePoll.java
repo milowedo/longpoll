@@ -1,7 +1,6 @@
 package com.services;
 
 import com.entity.Resolvable;
-import com.entity.Ticket;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
@@ -25,7 +24,7 @@ public class ServicePoll implements ServiceInterface {
                     },
                     500
             );
-            return  Optional.of(newDataForResponse); //!!!!!!!!!!!!!!!!!!!
+            return  Optional.of(newDataForResponse);
         }
     }
 
