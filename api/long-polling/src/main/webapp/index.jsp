@@ -13,7 +13,6 @@
 
 <a href="${pageContext.request.contextPath}/ticket/subscribe">subscribe</a>
 <a href="${pageContext.request.contextPath}/ticket/trigger/2">change data</a>
-<a href="${pageContext.request.contextPath}/ticket/employee/2">get data</a>
 
 <hr>
 

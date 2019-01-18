@@ -10,38 +10,37 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeServiceInterface {
+public class EmployeeServiceImpl extends ServicePoll implements EmployeeServiceInterface {
 
     private final EmployeeDaoInterface employeeDaoInterface;
-    private boolean isNewEmployeeAdded = false;
 
     @Autowired
     public EmployeeServiceImpl(EmployeeDaoInterface employeeDaoInterface) {
         this.employeeDaoInterface = employeeDaoInterface;
     }
 
-    @Transactional
-    public Optional<Resolvable> resolve() {
-        if (!isNewEmployeeAdded) {
-            return Optional.empty();
-        } else {
-            EmployeeServiceImpl thisObj = this;
-
-            Employee changedEmployee = getEmployee(2);
-            System.out.println(changedEmployee.toString());
-
-            new java.util.Timer().schedule(
-                    new java.util.TimerTask() {
-                        @Override
-                        public void run() {
-                            thisObj.isNewEmployeeAdded = false;
-                        }
-                    },
-                    500
-            );
-            return Optional.of(changedEmployee);
-        }
-    }
+//    @Transactional
+//    public Optional<Resolvable> resolve() {
+//        if (!isNewEmployeeAdded) {
+//            return Optional.empty();
+//        } else {
+//            EmployeeServiceImpl thisObj = this;
+//
+//            Employee changedEmployee = getEmployee(2);
+//            System.out.println(changedEmployee.toString());
+//
+//            new java.util.Timer().schedule(
+//                    new java.util.TimerTask() {
+//                        @Override
+//                        public void run() {
+//                            thisObj.isNewEmployeeAdded = false;
+//                        }
+//                    },
+//                    500
+//            );
+//            return Optional.of(changedEmployee);
+//        }
+//    }
 
     @Override
     @Transactional
@@ -53,7 +52,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
     @Transactional
     public void saveEmployee(Employee theEmployee) {
         employeeDaoInterface.saveEmployee(theEmployee);
-        this.notifyOfChange();
+        this.notifyOfChange(theEmployee);
     }
 
     @Override
@@ -67,11 +66,5 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
     public void deleteEmployee(int theId) {
         employeeDaoInterface.deleteEmployee(theId);
     }
-
-    @Override
-    public void notifyOfChange() {
-        this.isNewEmployeeAdded = true;
-    }
-
 
 }

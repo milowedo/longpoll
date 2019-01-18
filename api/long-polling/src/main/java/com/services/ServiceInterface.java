@@ -5,6 +5,7 @@ import com.entity.Resolvable;
 import java.util.Optional;
 
 public interface ServiceInterface {
-    public Optional<Resolvable> resolve();
-    void notifyOfChange();
+    Optional<Resolvable> resolve();
+    default void notifyOfChange(Resolvable resolvable){
+    }
 }

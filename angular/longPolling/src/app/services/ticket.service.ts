@@ -1,7 +1,6 @@
 import {Ticket} from '../entities/ticket.model';
 import {HttpClient} from '@angular/common/http';
-import {EventEmitter, Injectable, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
+import {EventEmitter, Injectable} from '@angular/core';
 
 @Injectable()
 export class TicketService{
@@ -10,9 +9,10 @@ export class TicketService{
   ticketsChanged = new EventEmitter<Ticket[]>();
   ticketClicked = new EventEmitter<Ticket>();
 
+
   constructor(private httpClient: HttpClient){};
 
-  public fetchTickets(){
+  public fetchAllTickets(){
     this
       .httpClient
       .get<Ticket[]>("http://localhost:8080/ticket/all")

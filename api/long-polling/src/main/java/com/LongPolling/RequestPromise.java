@@ -15,7 +15,6 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
     private HttpSession promiseSession;
     private final Logger logger = LoggerFactory.getLogger(RequestPromise.class);
 
-
     public RequestPromise(ServiceInterface serviceInterface){
         this.serviceInterface = serviceInterface;
     }
@@ -40,5 +39,6 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
         assert this.promiseSession != null;
         this.promiseSession.invalidate();
     }
+
     public void setSession(HttpSession session) { this.promiseSession = session; }
 }

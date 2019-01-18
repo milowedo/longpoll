@@ -14,10 +14,11 @@ export class TicketListComponent implements OnInit{
   constructor(private ticketService: TicketService) {}
 
   ngOnInit(): void {
-    this.ticketService.fetchTickets();
+    this.ticketService.fetchAllTickets();
     this.tickets = this.ticketService.getTickets();
     this.ticketService.ticketsChanged.subscribe(
-      (newTickets : Ticket[]) => this.tickets = newTickets
+      (newTickets : Ticket[]) =>
+        this.tickets = newTickets
     )
   }
 

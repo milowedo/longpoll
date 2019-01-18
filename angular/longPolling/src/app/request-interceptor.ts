@@ -15,17 +15,7 @@ export class HttpRequestInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const timeoutValue = Number(request.headers.get('timeout')) || this.defaultTimeout;
-    // request = request.clone();
-    console.log(timeoutValue);
-    console.log(request);
-
-    // if(this.token.get()){
-    //   console.log('setting token in header: ' + this.token.get());
-    //   const authReq = request.clone({
-    //     headers: request.headers.set('X-AUTH-TOKEN', this.token.get())
-    //   });
-    //   return next.handle(authReq);
-    // }
+    console.log(timeoutValue,":",request);
 
     return next.handle(request).pipe(timeout(timeoutValue));
   }
