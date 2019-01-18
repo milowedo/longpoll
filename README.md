@@ -1,8 +1,12 @@
 # Http server push with long-polling technique implementation
 
+The project consists of the server and client side code. It is an implementation of server push that can be added to your own project.
 
-The project consists of the server and client side code to properly demonstrate the idea of server pushing something to the user. Well not exacly pushing, but let us start with a little explanation.
+## Features
+This small project allows you to query the sever for the real-time data, saving connection's bandwidth.
+You can use it for having any type of notification or simply to allow Server data at any time he needs to and not only when the Client is precisely asking for it.
 
+---
 ## Idea  behind the project ~(what is longpolling?)
 
 ##### Short-polling (standard http behaviour)
@@ -58,15 +62,15 @@ It is necessary to wait for the result this way, because the *dataEmitter* of ty
 * setUri(uri: string): void {}
 
 ### Server
+For everything to work fine server side, we need to do a few things, that is:
 
-Allright, for everything to work fine server side, we need to do a few things, that is:
-    * create a rest controller to handle our long-polling request
-    * make our *Service*(a class which takes care of fetching data)
-        + **extend** *ServicePoll* 
-        + define when the new data is available for the server to send it back to *client*
-    * remember that **every** class we want to use in a long-polling request needs to **extend** the *Resolvable*
+* create a rest controller to handle our long-polling request
+* make our *Service*(a class which takes care of fetching data)
+    - **extend** *ServicePoll* 
+    - define when the new data is available for the server to send it back to *client*
+* remember that **every** class we want to use in a long-polling request needs to **extend** the *Resolvable*
 
-Okay, considering extending a class is not a problem that needs any coverage, let's take a look at the *rest controller*.
+Considering extending a class is not a problem that needs any coverage, let's take a look at the *rest controller*.
 
 It is mandatory to import *RequestPromise* , *Overseer*  and *Service* classes.
 We should now inject our *Service* and ...the *Overseer* class, which will be responsible for storing long-polling requests, and trying to resolve them every 600 miliseconds, that is it will check whether new data has become available, and handle any kind of related situations properly.
@@ -79,8 +83,8 @@ We need the HttpSession as the mapping argument because we will be destroying th
     public RequestPromise handle(HttpSession session){
     
 ```
-Now we create our response which is of type RequestPromise, and that extends DefferedResult<Resolvable>.
-    We set the request's session, put the request into the overseer(an observer), and return it.
+Now we create our response which is of type RequestPromise, and that extends the DefferedResult<Resolvable>.
+    We set the request's session, put the request into the Overseer(an observer), and return it.
 ```java
         RequestPromise output = new RequestPromise(implementedService);
         output.setSession(session);
