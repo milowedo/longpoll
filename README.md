@@ -4,10 +4,12 @@ The project consists of the server and client side code. It is an implementation
 
 ## Features
 This small project allows you to query the sever for the real-time data, saving connection's bandwidth.
-You can use it for having any type of notification or simply to allow Server data at any time he needs to and not only when the Client is precisely asking for it.
+You can use it for having a system of any type of notifications or simply to allow Server send data to the Client at any time he wants to and not only when the Client is precisely asking for it.
 
 ---
 ## Idea  behind the project ~(what is longpolling?)
+
+The main thing is that normally server cannot send client any data unless he is asked for it. Only then, he shall respond, sending what he has been asked for.
 
 ##### Short-polling (standard http behaviour)
 To be up to date with data on the server client can send a request asking for a data, the server side will respond with the data if it has it or with a response containing information that the data is yet not available.
@@ -15,7 +17,7 @@ So client sends another request hoping to get the data this time instead of an e
 This idea is a bit harsh when it comes to the amount of traffic the server will receive.
 
 ##### Long-polling
-With the long-polling (THIS PROJECT) the client is sending a request for data to the server and then, if the data is not available in that moment, the request is waiting on the server until the data happens to be acquirable or the time out occurs(the usual browser's timeout is no less than 30sec, so we will keep to that).
+With the long-polling **(THIS PROJECT)** the client is sending a request for data to the server and then, if the data is not available in that moment, the request is waiting on the server until the data happens to be acquirable or the time out occurs(the usual browser's timeout is no less than 30sec, so we will keep to that).
 The server responses, closing the http session with client.
 As soon as the client gets a response, it sends another request for the new data. That way, the server always has a request hanging he can put data in and return it to the client any time some data gets obtainable.
 
