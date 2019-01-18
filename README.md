@@ -26,6 +26,11 @@ As soon as the client gets a response, it sends another request for the new data
 ## Structure
 ![Server class diagram](classes.png)
 
+#### Used design patterns
+* **Command** in RequestPromise, execute() method hold bussiness logic and work asynchronously
+* **Observer** in Overseer because we have to check whether the new data is available to be send back to the Client
+* **Singleton** in Overseer as we need to access it from different controllers and still have one instance of it that holds info about the requests that are waiting on the server to be resolved.
+
 ---
 ## Usage
 
