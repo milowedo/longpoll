@@ -20,14 +20,17 @@ export class LongPoll {
     this.subscriptionActive = val;
   }
 
+
   public makeLongRequest(): void{
     if(this.subscriptionActive) {
       this
         .httpClient.get(this.ApiURI + this.ApiCall)
         .subscribe(
           (data : any) => {
-            this.setResult(data);
-            console.log("received" + this.result);
+            if(this.subscriptionActive) {
+              this.setResult(data);
+              console.log("received" + this.result);
+            }
           },
           (data: HttpErrorResponse) => this.makeLongRequest(),
           () => this.makeLongRequest(),

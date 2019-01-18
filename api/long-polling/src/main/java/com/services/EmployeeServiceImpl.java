@@ -18,7 +18,7 @@ public class EmployeeServiceImpl extends ServicePoll implements EmployeeServiceI
     public EmployeeServiceImpl(EmployeeDaoInterface employeeDaoInterface) {
         this.employeeDaoInterface = employeeDaoInterface;
     }
-    
+
     @Override
     @Transactional
     public List<Employee> getAllEmployees() {

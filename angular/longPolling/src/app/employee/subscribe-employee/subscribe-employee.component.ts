@@ -30,21 +30,6 @@ export class SubscribeEmployeeComponent {
     }
   }
 
-  // getProfile() {
-  //   if(this.subscribing) {
-  //     this
-  //       .httpClient.get(this.URI + this.CALL)
-  //       .subscribe(
-  //         (data: Employee) => {
-  //           this.received = data;
-  //           console.log("received" + this.received);
-  //         },
-  //         (data : HttpErrorResponse) => this.getProfile(),
-  //         () => this.getProfile(),
-  //       );
-  //   }
-  // }
-
   removeProfile() {
     this.received = null;
   }

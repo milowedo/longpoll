@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class ServicePoll implements ServiceInterface {
 
-    Resolvable newDataForResponse = null;
+    private Resolvable newDataForResponse = null;
 
     @Transactional
     public Optional<Resolvable> resolve() {
