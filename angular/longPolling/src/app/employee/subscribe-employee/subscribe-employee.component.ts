@@ -34,9 +34,9 @@ export class SubscribeEmployeeComponent {
     this.received = null;
   }
 
-  subscribe(val: boolean) {
-    this.subscribing = val;
-    this.longPoll.changeSubscriptionStatus(val);
+  subscribe() {
+    this.subscribing = ! this.subscribing;
+    this.longPoll.changeSubscriptionStatus(this.subscribing);
     this.fetch();
   }
 }

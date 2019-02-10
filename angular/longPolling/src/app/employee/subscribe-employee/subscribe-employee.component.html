@@ -1,8 +1,7 @@
 <h3>subscribing component</h3>
 <div class="container">
   <!-- <input type="number" value="customer id" (keyup)="onNameKeyUp($event)"> -->
-  <button (click)="subscribe(true)">subscribe</button>
-  <button (click)="subscribe(false)">unsubscribe</button>
+  <button [ngStyle]="{'background-color':subscribing === true ? 'green' : 'red'}" (click)="subscribe()">subscribe</button>
   <button (click)="removeProfile()">remove customer</button>
 
   <div class="row" *ngIf="received">
