@@ -22,6 +22,16 @@ The server responses, closing the http session with client.
 As soon as the client gets a response, it sends another request for the new data. That way, the server always has a request hanging he can put data in and return it to the client any time some data gets obtainable.
 
 ---
+
+## Structure
+![Server class diagram](classes.png)
+
+#### Used design patterns
+* **Command** in RequestPromise, execute() method hold bussiness logic and work asynchronously
+* **Observer** in Overseer because we have to check whether the new data is available to be send back to the Client
+* **Singleton** in Overseer as we need to access it from different controllers and still have one instance of it that holds info about the requests that are waiting on the server to be resolved.
+
+---
 ## Usage
 
 To make a use of this project you will have to install an npm package for the client side and add a jar to the server so that everything would work fine.
@@ -50,7 +60,6 @@ It is necessary to wait for the result this way, because the *dataEmitter* of ty
 ```typescript
     this.longPoll.dataEmitter.subscribe( data => this.received = data)
 ```
----
 
 #### Visible functions
   * changeSubscriptionStatus(val: boolean) : void { }
@@ -62,7 +71,7 @@ It is necessary to wait for the result this way, because the *dataEmitter* of ty
 * setCall(call: string): void {}
 
 * setUri(uri: string): void {}
-
+---
 ### Server
 For everything to work fine server side, we need to do a few things, that is:
 
@@ -70,6 +79,12 @@ For everything to work fine server side, we need to do a few things, that is:
 * make our *Service*(a class which takes care of fetching data)
     - **extend** *ServicePoll* 
     - define when the new data is available for the server to send it back to *client*
+    ```java
+    (...) code that determines the situation when new data(myResolvable of type Resolvable) is aquired
+    ```
+    notify that the data has been aquired
+    this.notifyOfChange(myResolvable); 
+    ```
 * remember that **every** class we want to use in a long-polling request needs to **extend** the *Resolvable*
 
 Considering extending a class is not a problem that needs any coverage, let's take a look at the *rest controller*.
@@ -87,6 +102,7 @@ We need the HttpSession as the mapping argument because we will be destroying th
 ```
 Now we create our response which is of type RequestPromise, and that extends the DefferedResult<Resolvable>.
     We set the request's session, put the request into the Overseer(an observer), and return it.
+    
 ```java
         RequestPromise output = new RequestPromise(implementedService);
         output.setSession(session);
