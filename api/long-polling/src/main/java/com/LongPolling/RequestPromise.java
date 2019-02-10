@@ -5,7 +5,6 @@ import com.services.ServiceInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.async.DeferredResult;
-
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
@@ -14,20 +13,19 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
     private final ServiceInterface serviceInterface;
     private HttpSession promiseSession;
     private final Logger logger = LoggerFactory.getLogger(RequestPromise.class);
+    private final int TIMEOUT = 30000;
 
     public RequestPromise(ServiceInterface serviceInterface){
         this.serviceInterface = serviceInterface;
     }
 
-    public boolean execute() {
-        logger.info("");
+    public boolean update() {
         Optional<Resolvable> resolved = serviceInterface.resolve();
-        if( (System.currentTimeMillis() - this.promiseSession.getCreationTime() + Overseer.refreshTime) > 30000 ) {
-            this.setErrorResult("timedOut");
+        if( (System.currentTimeMillis() - this.promiseSession.getCreationTime() + Overseer.refreshTime) > TIMEOUT ) {
+            this.setErrorResult("timedOutSORRY");
             return true;
         }
         if(resolved.isPresent()){
-            logger.info("");
             this.setResult(resolved.get());
             return true;
         }else{

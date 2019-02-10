@@ -13,37 +13,26 @@ public class Overseer {
 
     static final long refreshTime = 600;
     private final Logger logger = LoggerFactory.getLogger(Overseer.class);
-    private final Queue<HangingRequest> responses = new ConcurrentLinkedDeque<>();
-    //static private Overseer instance;
+    private final Queue<HangingRequest> requests = new ConcurrentLinkedDeque<>();
 
-    Overseer(){
-        System.out.println("Overseer instance has been created/n" + this.getClass().getName());
-    }
-
-//    public static Overseer getOverseer(){
-//        if(instance == null){
-//            instance = new Overseer();
-//        }
-//        return instance;
-//    }
-
-    private void executeRequests(){
-        responses.forEach((hangingRequest -> {
-            logger.info("");
-            if (hangingRequest.execute()) {
-                responses.remove(hangingRequest);
+    private void notifyRequests(){
+        requests.forEach((hangingRequest -> {
+            if (hangingRequest.update()) {
+                requests.remove(hangingRequest);
                 hangingRequest.killSession();
             }
         }));
     }
 
     public void subscribe(HangingRequest hangingRequest){
-        this.responses.add(hangingRequest);
+        this.requests.add(hangingRequest);
     }
 
+    //TODO add an unsubscribe method
+
     @Scheduled(fixedRate = refreshTime)
-    public void seeWhetherAnythingCanBeExecuted(){
-        this.executeRequests();
+    public void seeWhetherAnythingCanBeUpdated(){
+        this.notifyRequests();
     }
 
 }
