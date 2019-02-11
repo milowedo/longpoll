@@ -1,11 +1,13 @@
 package com.LongPolling;
 
 import com.entity.Resolvable;
+import com.services.EmployeeServiceInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.http.HttpSession;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -28,10 +30,15 @@ public class Overseer {
             }
         }));
     }
+    
 
-    public void subscribe(HangingRequest hangingRequest, ServiceInterface service){
-        this.requests.add(hangingRequest);
+    public RequestPromise subscribe(String className, HttpSession session, ServiceInterface service) {
+        RequestPromise output = new RequestPromise(className);
+        output.setSession(session);
+        this.requests.add(output);
         if(!services.contains(service)) services.add(service);
+
+        return output;
     }
 
     //CANDO: add an unsubscribe method
@@ -50,5 +57,6 @@ public class Overseer {
             resolved.ifPresent(this::notifyRequests);
         });
     }
+
 
 }

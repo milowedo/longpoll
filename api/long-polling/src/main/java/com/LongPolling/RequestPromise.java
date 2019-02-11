@@ -33,8 +33,8 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
 
 
     public void killSession(){
-        assert this.promiseSession != null;
-        this.promiseSession.invalidate();
+        if(this.promiseSession != null)
+            this.promiseSession.invalidate();
     }
 
     public void setSession(HttpSession session) { this.promiseSession = session; }

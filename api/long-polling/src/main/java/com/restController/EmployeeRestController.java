@@ -26,10 +26,7 @@ public class EmployeeRestController {
 
     @GetMapping("/subscribe")
     public RequestPromise handleAsync(HttpSession session){
-        RequestPromise output = new RequestPromise(Employee.class.getName());
-        output.setSession(session);
-        overseer.subscribe(output, employeeService);
-        return output;
+        return overseer.subscribe(Employee.class.getName(), session, employeeService);
     }
 
     @GetMapping("/trigger/{employeeId}")
