@@ -1,12 +1,12 @@
 package com.LongPolling;
 
+import com.LongPolling.State.HangingPromise;
+import com.LongPolling.State.RequestPromise;
 import com.entity.Resolvable;
-import com.services.EmployeeServiceInterface;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
 import javax.servlet.http.HttpSession;
 import java.util.LinkedList;
 import java.util.List;
@@ -17,7 +17,7 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 @Component
 public class Overseer {
 
-    static final long refreshTime = 600;
+    public static final long refreshTime = 600;
     private final Logger logger = LoggerFactory.getLogger(Overseer.class);
     private final Queue<HangingRequest> requests = new ConcurrentLinkedDeque<>();
     private final List<ServiceInterface> services = new LinkedList<>();
@@ -30,14 +30,12 @@ public class Overseer {
             }
         }));
     }
-    
 
     public RequestPromise subscribe(String className, HttpSession session, ServiceInterface service) {
-        RequestPromise output = new RequestPromise(className);
+        RequestPromise output = new HangingPromise(className);
         output.setSession(session);
         this.requests.add(output);
         if(!services.contains(service)) services.add(service);
-
         return output;
     }
 

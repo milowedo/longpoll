@@ -1,7 +1,7 @@
 package com.restController;
 
 import com.LongPolling.Overseer;
-import com.LongPolling.RequestPromise;
+import com.LongPolling.State.RequestPromise;
 import com.entity.Ticket;
 import com.exceptionHandlingStuff.EmployeeNotFoundException;
 import com.services.TicketServiceInterface;
@@ -31,10 +31,10 @@ public class TicketRestController {
 
     @GetMapping("/subscribe")
     public RequestPromise handleAsync(HttpSession session){
-        RequestPromise output = new RequestPromise(Ticket.class.getName());
-        output.setSession(session);
-        overseer.subscribe(output, ticketService);
-        return output;
+        return overseer.subscribe(
+                Ticket.class.getName(),
+                session,
+                ticketService);
     }
 
     @GetMapping("/trigger/{ticketID}")

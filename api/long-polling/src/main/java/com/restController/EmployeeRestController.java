@@ -1,6 +1,6 @@
 package com.restController;
 
-import com.LongPolling.RequestPromise;
+import com.LongPolling.State.RequestPromise;
 import com.entity.Employee;
 import com.LongPolling.Overseer;
 import com.exceptionHandlingStuff.EmployeeNotFoundException;
@@ -26,7 +26,10 @@ public class EmployeeRestController {
 
     @GetMapping("/subscribe")
     public RequestPromise handleAsync(HttpSession session){
-        return overseer.subscribe(Employee.class.getName(), session, employeeService);
+        return overseer.subscribe(
+                Employee.class.getName(),
+                session,
+                employeeService);
     }
 
     @GetMapping("/trigger/{employeeId}")

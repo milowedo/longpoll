@@ -1,12 +1,14 @@
-package com.LongPolling;
+package com.LongPolling.State;
 
+import com.LongPolling.HangingRequest;
+import com.LongPolling.Overseer;
 import com.entity.Resolvable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.context.request.async.DeferredResult;
 import javax.servlet.http.HttpSession;
 
-public class RequestPromise extends DeferredResult<Resolvable> implements HangingRequest {
+public abstract class RequestPromise extends DeferredResult<Resolvable> implements HangingRequest {
 
     private HttpSession promiseSession;
     private final Logger logger = LoggerFactory.getLogger(RequestPromise.class);
@@ -30,7 +32,6 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
             return true;
         }return false;
     }
-
 
     public void killSession(){
         if(this.promiseSession != null)
