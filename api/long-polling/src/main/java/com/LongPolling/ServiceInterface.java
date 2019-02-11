@@ -1,4 +1,4 @@
-package com.services;
+package com.LongPolling;
 
 import com.entity.Resolvable;
 

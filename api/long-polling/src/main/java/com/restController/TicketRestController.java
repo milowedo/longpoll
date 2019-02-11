@@ -4,8 +4,6 @@ import com.LongPolling.Overseer;
 import com.LongPolling.RequestPromise;
 import com.entity.Ticket;
 import com.exceptionHandlingStuff.EmployeeNotFoundException;
-import com.services.ServiceInterface;
-import com.services.TicketServiceImpl;
 import com.services.TicketServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -33,9 +31,9 @@ public class TicketRestController {
 
     @GetMapping("/subscribe")
     public RequestPromise handleAsync(HttpSession session){
-        RequestPromise output = new RequestPromise(ticketService);
+        RequestPromise output = new RequestPromise(Ticket.class.getName());
         output.setSession(session);
-        overseer.subscribe(output);
+        overseer.subscribe(output, ticketService);
         return output;
     }
 

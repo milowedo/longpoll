@@ -1,11 +1,11 @@
-package com.services;
+package com.LongPolling;
 
 import com.entity.Resolvable;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-public class ServicePoll implements ServiceInterface {
+public abstract class ServicePoll implements ServiceInterface {
 
     private Resolvable newDataForResponse = null;
 

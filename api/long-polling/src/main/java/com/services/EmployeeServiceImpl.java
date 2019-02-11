@@ -1,13 +1,12 @@
 package com.services;
+import com.LongPolling.ServicePoll;
 import com.entity.Employee;
 import com.dao.EmployeeDaoInterface;
-import com.entity.Resolvable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeServiceImpl extends ServicePoll implements EmployeeServiceInterface {
