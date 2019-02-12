@@ -17,10 +17,27 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 @Component
 public class Overseer {
 
-    public static final long refreshTime = 600;
-    private final Logger logger = LoggerFactory.getLogger(Overseer.class);
+    private static final long refreshTime = 600;
+    private static final long TIMEOUT = 30000;
+//    private final Logger logger = LoggerFactory.getLogger(Overseer.class);
     private final Queue<HangingRequest> requests = new ConcurrentLinkedDeque<>();
     private final List<ServiceInterface> services = new LinkedList<>();
+
+    public RequestPromise subscribe(String className, HttpSession session, ServiceInterface service) {
+        RequestPromise output = new RequestPromise(className);
+        output.setSession(session);
+        this.requests.add(output);
+        if(!services.contains(service)) services.add(service);
+        return output;
+    }
+
+    public static long getRefreshTime() {
+        return refreshTime;
+    }
+
+    public static long getTIMEOUT() {
+        return TIMEOUT;
+    }
 
     private void notifyRequests(Resolvable resolved){
         requests.forEach((hangingRequest -> {
@@ -31,24 +48,18 @@ public class Overseer {
         }));
     }
 
-    public RequestPromise subscribe(String className, HttpSession session, ServiceInterface service) {
-        RequestPromise output = new HangingPromise(className);
-        output.setSession(session);
-        this.requests.add(output);
-        if(!services.contains(service)) services.add(service);
-        return output;
-    }
-
     //CANDO: add an unsubscribe method
 
     @Scheduled(fixedRate = refreshTime)
     public void scheduled(){
 
         requests.forEach(hangingRequest -> {
-            if(hangingRequest.checkForTimeout()) {
+            long millis = System.currentTimeMillis() % 1000;
+            if(hangingRequest.checkState()) {
                 requests.remove(hangingRequest);
-                hangingRequest.killSession();
-            } });
+            }
+            System.out.println("Timeout took: " + (System.currentTimeMillis() - millis));
+        });
 
         services.forEach(serviceInterface -> {
             Optional<Resolvable> resolved = serviceInterface.resolve();

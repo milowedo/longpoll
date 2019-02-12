@@ -1,42 +1,46 @@
 package com.LongPolling.State;
 
 import com.LongPolling.HangingRequest;
-import com.LongPolling.Overseer;
 import com.entity.Resolvable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.web.context.request.async.DeferredResult;
+
 import javax.servlet.http.HttpSession;
 
-public abstract class RequestPromise extends DeferredResult<Resolvable> implements HangingRequest {
+public class RequestPromise implements HangingRequest {
 
     private HttpSession promiseSession;
-    private final Logger logger = LoggerFactory.getLogger(RequestPromise.class);
-    private final int TIMEOUT = 30000;
     private String expected;
+    private PromiseState state;
 
     public RequestPromise(String classType) {
         this.expected = classType;
+        this.state = new HangingPromise(this);
     }
 
-    public boolean checkForTimeout(){
-        if( (System.currentTimeMillis() - this.promiseSession.getCreationTime() + Overseer.refreshTime) > TIMEOUT ) {
-            this.setErrorResult("timedOutSORRY");
-            return true;
-        }return false;
+    void changeState(PromiseState state){
+        this.state = state;
+    }
+    HttpSession getPromiseSession() {
+        return promiseSession;
+    }
+    String getExpected() {
+        return expected;
+    }
+    public void checkForTimeout(){
+        state.checkForTimeout();
+    }
+    public void setSession(HttpSession session) { this.promiseSession = session; }
+    @Override
+    public boolean checkState() {
+        this.checkForTimeout();
+        return this.state instanceof ResolvedPromise;
     }
 
     public boolean update(Resolvable resolved) {
+        state.update(resolved);
         if(resolved.getClass().getName().equals(expected)) {
             this.setResult(resolved);
             return true;
         }return false;
     }
 
-    public void killSession(){
-        if(this.promiseSession != null)
-            this.promiseSession.invalidate();
-    }
-
-    public void setSession(HttpSession session) { this.promiseSession = session; }
 }
