@@ -1,25 +1,18 @@
 package com.LongPolling;
 
-import com.LongPolling.State.HangingPromise;
 import com.LongPolling.State.RequestPromise;
 import com.entity.Resolvable;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpSession;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Queue;
+import java.util.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 @Component
 public class Overseer {
 
-    private static final long refreshTime = 600;
+    private static final long refreshTime = 1500;
     private static final long TIMEOUT = 30000;
-//    private final Logger logger = LoggerFactory.getLogger(Overseer.class);
     private final Queue<HangingRequest> requests = new ConcurrentLinkedDeque<>();
     private final List<ServiceInterface> services = new LinkedList<>();
 
@@ -39,28 +32,21 @@ public class Overseer {
         return TIMEOUT;
     }
 
-    private void notifyRequests(Resolvable resolved){
-        requests.forEach((hangingRequest -> {
-            if (hangingRequest.update(resolved)) {
-                requests.remove(hangingRequest);
-                hangingRequest.killSession();
-            }
-        }));
-    }
+    private void notifyRequests(Resolvable resolved){ requests.forEach((hangingRequest -> hangingRequest.update(resolved))); }
 
     //CANDO: add an unsubscribe method
 
     @Scheduled(fixedRate = refreshTime)
     public void scheduled(){
 
+        //CHECK FOR REDUNDANT REQUESTS
         requests.forEach(hangingRequest -> {
-            long millis = System.currentTimeMillis() % 1000;
-            if(hangingRequest.checkState()) {
+            if(hangingRequest.checkIfResolved()) {
                 requests.remove(hangingRequest);
             }
-            System.out.println("Timeout took: " + (System.currentTimeMillis() - millis));
         });
 
+        //CHECK FOR NEW DATA
         services.forEach(serviceInterface -> {
             Optional<Resolvable> resolved = serviceInterface.resolve();
             resolved.ifPresent(this::notifyRequests);

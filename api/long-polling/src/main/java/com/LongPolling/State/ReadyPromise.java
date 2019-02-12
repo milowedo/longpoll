@@ -1,6 +1,7 @@
 package com.LongPolling.State;
 
 import com.LongPolling.Overseer;
+import com.entity.Resolvable;
 
 public class ReadyPromise extends PromiseState {
 
@@ -9,10 +10,17 @@ public class ReadyPromise extends PromiseState {
     }
 
     @Override
+    void update(Resolvable resolved) {
+        requestPromise.setResult(resolved);
+        requestPromise.changeState(new ResolvedPromise(requestPromise));
+        requestPromise.update(null);
+    }
+
+    @Override
     public void checkForTimeout() {
         if ((System.currentTimeMillis() - this.requestPromise.getPromiseSession().getCreationTime() + Overseer.getRefreshTime()) > Overseer.getTIMEOUT()) {
             requestPromise.changeState(new TimedOutPromise(requestPromise));
-            this.checkForTimeout();
+            this.requestPromise.checkForTimeout();
         }
     }
 }

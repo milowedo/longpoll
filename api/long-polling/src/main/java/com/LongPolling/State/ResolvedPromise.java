@@ -1,5 +1,7 @@
 package com.LongPolling.State;
 
+import com.entity.Resolvable;
+
 public class ResolvedPromise extends PromiseState {
 
     ResolvedPromise(RequestPromise requestPromise) {
@@ -7,13 +9,19 @@ public class ResolvedPromise extends PromiseState {
     }
 
     @Override
+    void update(Resolvable resolved) {
+        this.killSession();
+    }
+
+    @Override
     public void checkForTimeout() {
         this.killSession();
     }
 
-    private void killSession(){
-        if(this.requestPromise.getPromiseSession() != null)
+    private synchronized void killSession(){
+        if(this.requestPromise.getPromiseSession() != null) {
             this.requestPromise.getPromiseSession().invalidate();
+        }
     }
 
 }

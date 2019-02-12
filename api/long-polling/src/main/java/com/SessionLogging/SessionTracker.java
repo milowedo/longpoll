@@ -33,14 +33,14 @@ public class SessionTracker implements HttpSessionListener {
         logger.info("session employee_id "+ event.getSession().getId());
         this.runningSessions.add(event.getSession());
                 activeSessionsCount.inc();
-        logger.info(("TOTAL SESSION: " + this.activeSessionsCount.getCount()));
+        logger.info(("\nTOTAL SESSION: " + this.activeSessionsCount.getCount()));
     }
     public void sessionDestroyed(final HttpSessionEvent event) {
         activeSessionsCount.dec();
         logger.info("session destroyed " + event.getSession().getId() +
                 "TOTAL SESSIONS: " + activeSessionsCount.getCount());
         this.runningSessions.remove(event.getSession());
-        logger.info("current open sessions: \n");
+        logger.info("currently open sessions: \n");
         runningSessions.forEach((element) -> logger.info(String.valueOf(element)));
     }
 }

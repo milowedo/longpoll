@@ -1,5 +1,7 @@
 package com.LongPolling.State;
 
+import com.entity.Resolvable;
+
 public class TimedOutPromise extends PromiseState {
 
     TimedOutPromise(RequestPromise requestPromise) {
@@ -8,7 +10,14 @@ public class TimedOutPromise extends PromiseState {
 
     @Override
     public void checkForTimeout() {
-        this.setErrorResult("timedOutSORRY");
+        requestPromise.setErrorResult("timedOutSORRY");
+        requestPromise.changeState(new ResolvedPromise(requestPromise));
+        requestPromise.checkForTimeout();
+    }
+
+    @Override
+    void update(Resolvable resolved) {
+        requestPromise.setErrorResult("timedOutSORRY");
         requestPromise.changeState(new ResolvedPromise(requestPromise));
         requestPromise.checkForTimeout();
     }

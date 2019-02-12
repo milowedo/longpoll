@@ -22,7 +22,7 @@ public abstract class ServicePoll implements ServiceInterface {
                             thisObj.newDataForResponse = null;
                         }
                     },
-                    500
+                    400
             );
             return  Optional.of(newDataForResponse);
         }

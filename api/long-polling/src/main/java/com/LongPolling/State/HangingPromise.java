@@ -1,21 +1,30 @@
 package com.LongPolling.State;
 
 import com.LongPolling.Overseer;
+import com.entity.Resolvable;
 
 public class HangingPromise extends PromiseState {
 
-    public HangingPromise(RequestPromise requestPromise) {
+    HangingPromise(RequestPromise requestPromise) {
         super(requestPromise);
     }
 
     @Override
+    void update(Resolvable resolved) {
+        if(resolved.getClass().getName().equals(requestPromise.getExpected())) {
+            requestPromise.changeState(new ReadyPromise(requestPromise));
+            requestPromise.update(resolved);
+        }
+    }
+
+    @Override
     public void checkForTimeout() {
-        if ((System.currentTimeMillis() - this.requestPromise.getPromiseSession().getCreationTime() + Overseer.getRefreshTime()) > Overseer.getTIMEOUT()) {
+        if(this.requestPromise.getPromiseSession() == null) requestPromise.changeState(new ResolvedPromise(requestPromise));
+        if ((System.currentTimeMillis() - this.requestPromise.getPromiseSession().getCreationTime() + Overseer.getRefreshTime()) >= Overseer.getTIMEOUT()) {
             requestPromise.changeState(new TimedOutPromise(requestPromise));
-            this.checkForTimeout();
+            this.requestPromise.checkForTimeout();
         }
 
 
     }
-
 }

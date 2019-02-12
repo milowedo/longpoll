@@ -6,8 +6,8 @@ import javax.servlet.http.HttpSession;
 
 public interface HangingRequest { //subscriber
 
-    boolean update(Resolvable resolved);
+    void update(Resolvable resolved);
     void checkForTimeout();
     void setSession(HttpSession session);
-    boolean checkState();
+    boolean checkIfResolved();
 }
