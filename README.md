@@ -75,19 +75,19 @@ It is necessary to wait for the result this way, because the *dataEmitter* of ty
 ### Server
 For everything to work fine server side, we need to do a few things, that is:
 
-* create a rest controller to handle our long-polling request
+* create a rest controller to handle our long-polling request, make it dependency inject Overseer class and your *Service* that implements *Service poll*
 * make our *Service*(a class which takes care of fetching data)
     - **extend** *ServicePoll* 
     - define when the new data is available for the server to send it back to *client*
     ```java
-    (...) code that determines the situation when new data(myResolvable of type Resolvable) is aquired
+    (...) code that determines the situation when data(myResolvable of type *Resolvable*) is acquired
     ```
     notify that the data has been aquired
-    this.notifyOfChange(myResolvable); 
+    this.notifyOfChange(myResolvable); (here we are calling the *ServicePoll* method)
     ```
-* remember that **every** class we want to use in a long-polling request needs to **extend** the *Resolvable*
+* remember that **every** class we want to use in a long-polling response needs to **extend** the *Resolvable* interface
 
-Considering extending a class is not a problem that needs any coverage, let's take a look at the *rest controller*.
+Considering that extending a class is not a problem that needs any coverage, let's take a look at the *rest controller*.
 
 It is mandatory to import *RequestPromise* , *Overseer*  and *Service* classes.
 We should now inject our *Service* and ...the *Overseer* class, which will be responsible for storing long-polling requests, and trying to resolve them every 600 miliseconds, that is it will check whether new data has become available, and handle any kind of related situations properly.
@@ -97,17 +97,20 @@ We had "/something/subscribe" used in our client, and so we will keep it in the 
 We need the HttpSession as the mapping argument because we will be destroying the session as soon as the response is being produced.
 ```java
 @GetMapping("/something/subscribe")
-    public RequestPromise handle(HttpSession session){
+    public RequestPromise handle(HttpSession session){ //remember to add HttpSession argument of the mapping
     
 ```
-Now we create our response which is of type RequestPromise, and that extends the DefferedResult<Resolvable>.
-    We set the request's session, put the request into the Overseer(an observer), and return it.
+Now what we return is an instance of RequestPromise which extends DefferedResult<Resolvable>.
+We acquire it by subscribing to the Overseer, in the argument we pass:
+    class type of expected object(it is important, beacuse we will only receive updates considering this very class type)request's session
+    session
+    previously implemented service(has to implement ServicePoll) that is resposible for actually notifying of the new data
     
 ```java
-        RequestPromise output = new RequestPromise(implementedService);
-        output.setSession(session);
-        overseer.subscribe(output);
-        return output;
+        return overseer.subscribe(
+                Employee.class.getName(),
+                session,
+                employeeService);
     }
 ```
 ---
