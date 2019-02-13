@@ -18,7 +18,8 @@ public class STATEReadyPromise extends STATEPromise {
 
     @Override
     public void checkForTimeout() {
-        if ((System.currentTimeMillis() - this.requestPromise.getPromiseSession().getCreationTime() + Overseer.getRefreshTime()) > Overseer.getTIMEOUT()) {
+        long creationTime = this.requestPromise.getPromiseSession().getCreationTime();
+        if ((System.currentTimeMillis() - creationTime + Overseer.getRefreshTime()) > Overseer.getTIMEOUT()) {
             requestPromise.changeState(new STATETimedOutPromise(requestPromise));
             this.requestPromise.checkForTimeout();
         }

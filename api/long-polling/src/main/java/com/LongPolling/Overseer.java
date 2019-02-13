@@ -1,6 +1,8 @@
 package com.LongPolling;
 
 import com.LongPolling.State.RequestPromise;
+import org.springframework.context.annotation.Scope;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpSession;
@@ -8,12 +10,30 @@ import java.util.*;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 @Component
-public class Overseer {
+@Scope("singleton")
+public final class Overseer {
+    //private static Overseer instance = null;
 
     private static final long refreshTime = 600;
     private static final long TIMEOUT = 30000;
     private final Queue<HangingRequest> requests = new ConcurrentLinkedDeque<>();
     private final List<ServiceInterface> services = new LinkedList<>();
+
+//Singleton manual implementation, we do not need it, because Spring does it for us
+//    private Overseer(){
+//        System.out.println("Creating the overseer");
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException ex) {
+//            ex.printStackTrace();
+//        }
+//    }
+//    public static Overseer getInstance(){
+//        if (instance == null){
+//            instance = Overseer.instance;
+//        }
+//        return instance;
+//    }
 
     public RequestPromise subscribe(String className, HttpSession session, ServiceInterface service) {
 
@@ -40,7 +60,6 @@ public class Overseer {
 
     @Scheduled(fixedRate = refreshTime)
     public void scheduled(){
-
         //CHECK FOR REDUNDANT REQUESTS
         requests.forEach(hangingRequest -> {
             if(hangingRequest.checkIfResolved()) {

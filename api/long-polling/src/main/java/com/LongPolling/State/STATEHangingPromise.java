@@ -19,8 +19,14 @@ public class STATEHangingPromise extends STATEPromise {
 
     @Override
     public void checkForTimeout() {
-        if(this.requestPromise.getPromiseSession() == null) requestPromise.changeState(new STATEResolvedPromise(requestPromise));
-        if ((System.currentTimeMillis() - this.requestPromise.getPromiseSession().getCreationTime() + Overseer.getRefreshTime()) >= Overseer.getTIMEOUT()) {
+        if(this.requestPromise.getPromiseSession() == null) {
+            requestPromise.changeState(new STATEResolvedPromise(requestPromise));
+        }
+
+        long currentTime = System.currentTimeMillis();
+        long creationTime = this.requestPromise.getPromiseSession().getCreationTime();
+
+        if (( currentTime- creationTime + Overseer.getRefreshTime()) >= Overseer.getTIMEOUT()) {
             requestPromise.changeState(new STATETimedOutPromise(requestPromise));
             this.requestPromise.checkForTimeout();
         }
