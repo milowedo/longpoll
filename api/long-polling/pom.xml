@@ -151,7 +151,6 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>longpoll</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

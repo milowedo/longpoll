@@ -1,6 +1,7 @@
 package com.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,6 +14,7 @@ import javax.sql.DataSource;
 
 @Configuration("SecurityConfiguration")
 @EnableWebSecurity
+@ComponentScan
 @Order(101) // little hack to trick Spring into actually reading all of the config classes
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
