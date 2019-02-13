@@ -2,11 +2,14 @@ package com.LongPolling;
 
 import com.LongPolling.State.RequestPromise;
 import org.springframework.context.annotation.Scope;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+
 import javax.servlet.http.HttpSession;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Optional;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
 
 @Component
@@ -19,7 +22,7 @@ public final class Overseer {
     private final Queue<HangingRequest> requests = new ConcurrentLinkedDeque<>();
     private final List<ServiceInterface> services = new LinkedList<>();
 
-//Singleton manual implementation, we do not need it, because Spring does it for us
+//Singleton manual implementation, we do not need it, Spring does it for us
 //    private Overseer(){
 //        System.out.println("Creating the overseer");
 //        try {

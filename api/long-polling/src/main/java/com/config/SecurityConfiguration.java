@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 
 @Configuration("SecurityConfiguration")
 @EnableWebSecurity
-@Order(101) // Little hack to trick Spring
+@Order(101) // little hack to trick Spring into actually reading all of the config classes
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final DataSource securityDataSource;

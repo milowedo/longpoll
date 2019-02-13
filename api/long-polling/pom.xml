@@ -3,10 +3,10 @@
 		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com</groupId>
+	<groupId>com.millosz</groupId>
 	<artifactId>longpolling</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<properties>
 		<springframework.version>5.0.6.RELEASE</springframework.version>
@@ -132,7 +132,6 @@
 	</dependencies>
 
 	<build>
-
 		<finalName>longpolling</finalName>
 		<plugins>
 			<!-- Builds a Web Application Archive (WAR) file from the project output 
@@ -142,6 +141,20 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.0</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+							<classpathPrefix>lib/</classpathPrefix>
+							<mainClass>longpoll</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
 			</plugin>
 
 		</plugins>
