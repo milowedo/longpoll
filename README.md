@@ -27,8 +27,8 @@ As soon as the client gets a response, it sends another request for the new data
 ![Server class diagram](classes.png)
 
 #### Used design patterns
-* **Command** in RequestPromise, execute() method hold bussiness logic and work asynchronously
-* **Observer** in Overseer because we have to check whether the new data is available to be send back to the Client
+* **State** in RequestPromise, takes care the states that our requests are in
+* **Observer** in Overseer and RequestPromise because we have to check whether the right, new data is available to be send back to the Client
 * **Singleton** in Overseer as we need to access it from different controllers and still have one instance of it that holds info about the requests that are waiting on the server to be resolved.
 
 ---
@@ -36,9 +36,9 @@ As soon as the client gets a response, it sends another request for the new data
 
 To make a use of this project you will have to install an npm package for the client side and add a jar to the server so that everything would work fine.
 
-* in your client implementation directory run `npm install long-poll-template` 
+* in your client implementation directory run `npm install millosz-long-poll` 
 
-* in server side just include a jar `com.millosz.longpoll` from this repository
+* in server side just include a jar in maven dependencies from maven_lib/millosz/app-polling
 ---
 ### Client
 Inject the class (import it first), and set the requested url
@@ -80,9 +80,10 @@ For everything to work fine server side, we need to do a few things, that is:
     - **extend** *ServicePoll* 
     - define when the new data is available for the server to send it back to *client*
     ```java
-    (...) code that determines the situation when data(myResolvable of type *Resolvable*) is acquired
+    (...) code that determines the situation when data(myResolvable of type Resolvable) is acquired
     ```
     notify that the data has been aquired
+    ```java
     this.notifyOfChange(myResolvable); (here we are calling the *ServicePoll* method)
     ```
 * remember that **every** class we want to use in a long-polling response needs to **extend** the *Resolvable* interface
