@@ -1,7 +1,5 @@
 import {EventEmitter, Inject, Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Employee} from '../../entities/employee.model';
-import {Observable} from 'rxjs';
 
 @Injectable()
 export class LongPoll {

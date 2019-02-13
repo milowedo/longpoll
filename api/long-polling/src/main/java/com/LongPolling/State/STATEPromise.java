@@ -2,10 +2,10 @@ package com.LongPolling.State;
 
 import com.LongPolling.Resolvable;
 
-public abstract class PromiseState {
+public abstract class STATEPromise {
     RequestPromise requestPromise;
 
-    PromiseState(RequestPromise requestPromise) {
+    STATEPromise(RequestPromise requestPromise) {
         this.requestPromise = requestPromise;
     }
 

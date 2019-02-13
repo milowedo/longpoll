@@ -10,18 +10,18 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
 
     private HttpSession promiseSession;
     private String expectedReturnType;
-    private PromiseState state;
+    private STATEPromise state;
 
     public RequestPromise(String classType) {
         this.expectedReturnType = classType;
-        this.state = new HangingPromise(this);
+        this.state = new STATEHangingPromise(this);
     }
 
-    public PromiseState getState() {
+    public STATEPromise getState() {
         return state;
     }
 
-    void changeState(PromiseState state){
+    void changeState(STATEPromise state){
         this.state = state;
     }
     HttpSession getPromiseSession() {
@@ -37,11 +37,11 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
 
     @Override
     public boolean checkIfResolved() {
-        if(!(this.state instanceof ResolvedPromise)){
+        if(!(this.state instanceof STATEResolvedPromise)){
             this.checkForTimeout();
-            return this.state instanceof ResolvedPromise;
+            return this.state instanceof STATEResolvedPromise;
         }else{
-            return this.state instanceof ResolvedPromise;
+            return this.state instanceof STATEResolvedPromise;
         }
     }
     public void update(Resolvable resolved) {

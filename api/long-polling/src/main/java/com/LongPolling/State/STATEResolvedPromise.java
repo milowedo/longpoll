@@ -2,9 +2,9 @@ package com.LongPolling.State;
 
 import com.LongPolling.Resolvable;
 
-public class ResolvedPromise extends PromiseState {
+public class STATEResolvedPromise extends STATEPromise {
 
-    ResolvedPromise(RequestPromise requestPromise) {
+    STATEResolvedPromise(RequestPromise requestPromise) {
         super(requestPromise);
     }
 

@@ -16,10 +16,13 @@ public class Overseer {
     private final List<ServiceInterface> services = new LinkedList<>();
 
     public RequestPromise subscribe(String className, HttpSession session, ServiceInterface service) {
+
         RequestPromise output = new RequestPromise(className);
         output.setSession(session);
+
         this.requests.add(output);
         if(!services.contains(service)) services.add(service);
+
         return output;
     }
 

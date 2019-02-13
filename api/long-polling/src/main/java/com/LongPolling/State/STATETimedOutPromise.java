@@ -2,23 +2,23 @@ package com.LongPolling.State;
 
 import com.LongPolling.Resolvable;
 
-public class TimedOutPromise extends PromiseState {
+public class STATETimedOutPromise extends STATEPromise {
 
-    TimedOutPromise(RequestPromise requestPromise) {
+    STATETimedOutPromise(RequestPromise requestPromise) {
         super(requestPromise);
     }
 
     @Override
     public void checkForTimeout() {
         requestPromise.setErrorResult("timedOutSORRY");
-        requestPromise.changeState(new ResolvedPromise(requestPromise));
+        requestPromise.changeState(new STATEResolvedPromise(requestPromise));
         requestPromise.checkForTimeout();
     }
 
     @Override
     void update(Resolvable resolved) {
         requestPromise.setErrorResult("timedOutSORRY");
-        requestPromise.changeState(new ResolvedPromise(requestPromise));
+        requestPromise.changeState(new STATEResolvedPromise(requestPromise));
         requestPromise.checkForTimeout();
     }
 }
