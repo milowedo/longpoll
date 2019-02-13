@@ -1,7 +1,7 @@
 package com.LongPolling.State;
 
 import com.LongPolling.Overseer;
-import com.entity.Resolvable;
+import com.LongPolling.Resolvable;
 
 public class ReadyPromise extends PromiseState {
 

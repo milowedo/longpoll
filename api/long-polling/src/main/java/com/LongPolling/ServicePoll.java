@@ -1,6 +1,5 @@
 package com.LongPolling;
 
-import com.entity.Resolvable;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
@@ -24,7 +23,7 @@ public abstract class ServicePoll implements ServiceInterface {
                     },
                     400
             );
-            return  Optional.of(newDataForResponse);
+            return Optional.of(newDataForResponse);
         }
     }
 

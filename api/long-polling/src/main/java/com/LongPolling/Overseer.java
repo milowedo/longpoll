@@ -1,7 +1,6 @@
 package com.LongPolling;
 
 import com.LongPolling.State.RequestPromise;
-import com.entity.Resolvable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpSession;
@@ -11,7 +10,7 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 @Component
 public class Overseer {
 
-    private static final long refreshTime = 1500;
+    private static final long refreshTime = 600;
     private static final long TIMEOUT = 30000;
     private final Queue<HangingRequest> requests = new ConcurrentLinkedDeque<>();
     private final List<ServiceInterface> services = new LinkedList<>();

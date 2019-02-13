@@ -1,7 +1,6 @@
 package com.LongPolling.State;
 
-import com.entity.Resolvable;
-import org.springframework.web.context.request.async.DeferredResult;
+import com.LongPolling.Resolvable;
 
 public abstract class PromiseState {
     RequestPromise requestPromise;

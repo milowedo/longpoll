@@ -1,5 +1,6 @@
 package com.entity;
 
+import com.LongPolling.Resolvable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee extends Resolvable{
+public class Employee extends Resolvable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

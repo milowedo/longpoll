@@ -1,6 +1,6 @@
 package com.LongPolling.State;
 
-import com.entity.Resolvable;
+import com.LongPolling.Resolvable;
 
 public class ResolvedPromise extends PromiseState {
 

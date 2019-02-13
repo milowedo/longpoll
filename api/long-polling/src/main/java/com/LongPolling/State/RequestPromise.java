@@ -1,7 +1,7 @@
 package com.LongPolling.State;
 
 import com.LongPolling.HangingRequest;
-import com.entity.Resolvable;
+import com.LongPolling.Resolvable;
 import org.springframework.web.context.request.async.DeferredResult;
 
 import javax.servlet.http.HttpSession;
@@ -9,11 +9,11 @@ import javax.servlet.http.HttpSession;
 public class RequestPromise extends DeferredResult<Resolvable> implements HangingRequest{
 
     private HttpSession promiseSession;
-    private String expected;
+    private String expectedReturnType;
     private PromiseState state;
 
     public RequestPromise(String classType) {
-        this.expected = classType;
+        this.expectedReturnType = classType;
         this.state = new HangingPromise(this);
     }
 
@@ -27,8 +27,8 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
     HttpSession getPromiseSession() {
         return promiseSession;
     }
-    String getExpected() {
-        return expected;
+    String getExpectedReturnType() {
+        return expectedReturnType;
     }
     public void checkForTimeout(){
         state.checkForTimeout();
@@ -38,7 +38,6 @@ public class RequestPromise extends DeferredResult<Resolvable> implements Hangin
     @Override
     public boolean checkIfResolved() {
         if(!(this.state instanceof ResolvedPromise)){
-            System.out.println("not an instance of resolved, but of "+  this.state.getClass() +" :running checkForTimeout");
             this.checkForTimeout();
             return this.state instanceof ResolvedPromise;
         }else{

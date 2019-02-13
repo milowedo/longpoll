@@ -1,7 +1,7 @@
 package com.LongPolling.State;
 
 import com.LongPolling.Overseer;
-import com.entity.Resolvable;
+import com.LongPolling.Resolvable;
 
 public class HangingPromise extends PromiseState {
 
@@ -11,7 +11,7 @@ public class HangingPromise extends PromiseState {
 
     @Override
     void update(Resolvable resolved) {
-        if(resolved.getClass().getName().equals(requestPromise.getExpected())) {
+        if(resolved.getClass().getName().equals(requestPromise.getExpectedReturnType())) {
             requestPromise.changeState(new ReadyPromise(requestPromise));
             requestPromise.update(resolved);
         }
