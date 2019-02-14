@@ -9,7 +9,7 @@ export class ChangeEmployeeComponent{
 
   constructor(private httpClient:HttpClient){}
 
-  customerId: string = '2';
+  customerId: string = '5';
 
   updateProfile() {
     let num: string =  'http://localhost:8080/employee/trigger/' + this.customerId;
@@ -17,7 +17,8 @@ export class ChangeEmployeeComponent{
       .subscribe(
         (data: any) => {
           console.log(data);
-        }
+        },
+        () => this.customerId = "wrong id",
       );
   }
 

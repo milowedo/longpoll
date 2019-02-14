@@ -18,6 +18,7 @@ import { TicketComponent } from './ticket/ticket.component';
 import { ChangeTicketComponent } from './ticket/change-ticket/change-ticket.component';
 import { SubscribeTicketComponent } from './ticket/subscribe-ticket/subscribe-ticket.component';
 import { TicketListComponent } from './ticket/ticket-list/ticket-list.component';
+import { TicketSubComponent } from './ticket-sub/ticket-sub.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TicketListComponent } from './ticket/ticket-list/ticket-list.component'
     ChangeTicketComponent,
     SubscribeTicketComponent,
     TicketListComponent,
+    TicketSubComponent,
   ],
   imports: [
     BrowserModule,

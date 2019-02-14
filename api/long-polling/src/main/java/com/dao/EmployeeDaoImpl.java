@@ -31,7 +31,6 @@ public class EmployeeDaoImpl implements EmployeeDaoInterface {
 	@Override
 	public void saveEmployee(Employee theEmployee) {
 		Session currentSession = sessionFactory.getCurrentSession();
-
 		currentSession.saveOrUpdate(theEmployee);
 	}
 

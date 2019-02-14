@@ -21,14 +21,15 @@ public class TicketDaoImpl implements TicketDaoInterface {
 
     @Override
     public void addTicket(Ticket ticket) {
+        System.out.println("SAVING TICKET WITH ID OF: " + ticket.getTicketID());
         Session session = sessionFactory.getCurrentSession();
-        session.save(ticket);
+        session.saveOrUpdate(ticket);
     }
 
     @Override
     public Ticket getTicket(int ticketID) {
         Session currentSession = sessionFactory.getCurrentSession();
-
+        System.out.println("GETTING TICKET WITH ID OF: " + ticketID);
         Query<Ticket> ticketQuery = currentSession.createQuery(
                 "from Ticket where ticket_id = :ticketid ", Ticket.class)
                 .setParameter("ticketid", ticketID);
