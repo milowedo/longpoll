@@ -24,12 +24,15 @@ As soon as the client gets a response, it sends another request for the new data
 ---
 
 ## Structure
-![Server class diagram](classes.png)
-
-#### Used design patterns
 * **State** in RequestPromise, takes care the states that our requests are in
+![STATE design pattern](state.png)
+
 * **Observer** in Overseer and RequestPromise because we have to check whether the right, new data is available to be send back to the Client
+![OBSERVER design pattern](observer.png)
+
 * **Singleton** in Overseer as we need to access it from different controllers and still have one instance of it that holds info about the requests that are waiting on the server to be resolved.
+![SINGLETON design pattern](singleton.png)
+
 
 ---
 ## Usage
@@ -38,7 +41,7 @@ To make a use of this project you will have to install an npm package for the cl
 
 * in your client implementation directory run `npm install millosz-long-poll` 
 
-* in server side just include a jar in maven dependencies from maven_lib/millosz/app-polling
+* in server side include a jar in maven dependencies from maven_lib/millosz/app-polling adn then configure Spring Configuration Files remembering to make sessionCreationPolicy STATELESS in a SecurityConfiguration
 ---
 ### Client
 Inject the class (import it first), and set the requested url
@@ -78,6 +81,7 @@ For everything to work fine server side, we need to do a few things, that is:
 * create a rest controller to handle our long-polling request, make it dependency inject Overseer class and your *Service* that implements *Service poll*
 * make our *Service*(a class which takes care of fetching data)
     - **extend** *ServicePoll* 
+    - implement ServiceInterface
     - define when the new data is available for the server to send it back to *client*
     ```java
     (...) code that determines the situation when data(myResolvable of type Resolvable) is acquired
