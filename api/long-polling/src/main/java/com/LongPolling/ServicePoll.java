@@ -1,11 +1,13 @@
 package com.LongPolling;
 
+import org.jetbrains.annotations.Nullable;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
 public abstract class ServicePoll implements ServiceInterface {
 
+    @Nullable
     private Resolvable newDataForResponse = null;
 
     @Transactional

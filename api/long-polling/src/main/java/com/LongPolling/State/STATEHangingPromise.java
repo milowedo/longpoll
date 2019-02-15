@@ -2,6 +2,7 @@ package com.LongPolling.State;
 
 import com.LongPolling.Overseer;
 import com.LongPolling.Resolvable;
+import org.jetbrains.annotations.NotNull;
 
 public class STATEHangingPromise extends STATEPromise {
 
@@ -10,7 +11,7 @@ public class STATEHangingPromise extends STATEPromise {
     }
 
     @Override
-    void update(Resolvable resolved) {
+    void update(@NotNull Resolvable resolved) {
         if(resolved.getClass().getName().equals(requestPromise.getExpectedReturnType())) {
             requestPromise.changeState(new STATEReadyPromise(requestPromise));
             requestPromise.update(resolved);

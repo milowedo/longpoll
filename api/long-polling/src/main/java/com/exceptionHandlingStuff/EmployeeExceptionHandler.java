@@ -1,5 +1,6 @@
 package com.exceptionHandlingStuff;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -8,8 +9,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class EmployeeExceptionHandler {
 
+    @NotNull
     @ExceptionHandler
-    public ResponseEntity<EmployeeErrorResponse> handleException(EmployeeNotFoundException exception){
+    public ResponseEntity<EmployeeErrorResponse> handleException(@NotNull EmployeeNotFoundException exception){
 
         EmployeeErrorResponse errorResponse = new EmployeeErrorResponse();
 
@@ -20,8 +22,9 @@ public class EmployeeExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 
+    @NotNull
     @ExceptionHandler
-    public ResponseEntity<EmployeeErrorResponse> handleException(Exception exception){
+    public ResponseEntity<EmployeeErrorResponse> handleException(@NotNull Exception exception){
 
         EmployeeErrorResponse errorResponse = new EmployeeErrorResponse();
 

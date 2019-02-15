@@ -1,6 +1,7 @@
 package com.LongPolling;
 
 import com.LongPolling.State.RequestPromise;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.context.annotation.Scope;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -38,6 +39,7 @@ public final class Overseer {
 //        return instance;
 //    }
 
+    @NotNull
     public RequestPromise subscribe(String className, HttpSession session, ServiceInterface service) {
 
         RequestPromise output = new RequestPromise(className);
@@ -59,7 +61,7 @@ public final class Overseer {
 
     private void notifyRequests(Resolvable resolved){ requests.forEach((hangingRequest -> hangingRequest.update(resolved))); }
 
-    //CANDO: add an unsubscribe method
+    //CAN DO: add an unsubscribe method
 
     @Scheduled(fixedRate = refreshTime)
     public void scheduled(){

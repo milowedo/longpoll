@@ -3,7 +3,7 @@ package com.LongPolling.State;
 import com.LongPolling.Resolvable;
 
 public abstract class STATEPromise {
-    RequestPromise requestPromise;
+    final RequestPromise requestPromise;
 
     STATEPromise(RequestPromise requestPromise) {
         this.requestPromise = requestPromise;

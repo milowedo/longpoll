@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 public class RequestPromise extends DeferredResult<Resolvable> implements HangingRequest{
 
     private HttpSession promiseSession;
-    private String expectedReturnType;
+    private final String expectedReturnType;
     private STATEPromise state;
 
     public RequestPromise(String classType) {

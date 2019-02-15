@@ -3,11 +3,13 @@ package com.entity;
 import com.LongPolling.Resolvable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-@Entity
+@EqualsAndHashCode(callSuper = true)
+@Entity(name = "Employee")
 @Table(name="employee")
 @Data
 @AllArgsConstructor

@@ -5,6 +5,7 @@ import com.entity.Employee;
 import com.LongPolling.Overseer;
 import com.exceptionHandlingStuff.EmployeeNotFoundException;
 import com.services.EmployeeServiceInterface;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,6 +25,8 @@ public class EmployeeRestController {
         this.overseer = overseer;
     }
 
+    // subscribe for data to be sent back when available
+    @NotNull
     @GetMapping("/subscribe")
     public RequestPromise handleAsync(HttpSession session){
         return overseer.subscribe(
@@ -32,6 +35,7 @@ public class EmployeeRestController {
                 employeeService);
     }
 
+    @NotNull
     @GetMapping("/trigger/{employeeId}")
     public ResponseEntity<?> updateEmployee(@PathVariable int employeeId){
         Employee temp = employeeService.getEmployee(employeeId);
@@ -41,11 +45,11 @@ public class EmployeeRestController {
 
     //GET EMPLOYEE BY ID
     @GetMapping("/employee/{employeeId}")
-    public Employee getEmployee(@PathVariable int employeeId){
+    public ResponseEntity<Employee> getEmployee(@PathVariable int employeeId){
         Employee returnedEmployee = employeeService.getEmployee(employeeId);
 //        session.invalidate();
         if(returnedEmployee !=null){
-            return returnedEmployee;
+            return ResponseEntity.ok().body(returnedEmployee);
         }
         else throw new EmployeeNotFoundException("Employee not found: " + employeeId);
     }

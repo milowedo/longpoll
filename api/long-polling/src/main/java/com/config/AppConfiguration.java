@@ -4,6 +4,7 @@ import java.beans.PropertyVetoException;
 import java.util.Properties;
 import javax.sql.DataSource;
 import org.hibernate.SessionFactory;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,7 @@ public class AppConfiguration implements WebMvcConfigurer {
 
 	private final Environment env;
 
-	private Logger logger = LoggerFactory.getLogger(AppConfiguration.class);
+	private final Logger logger = LoggerFactory.getLogger(AppConfiguration.class);
 
 	@Autowired
 	public AppConfiguration(Environment env) {
@@ -35,6 +36,7 @@ public class AppConfiguration implements WebMvcConfigurer {
 	}
 
 	// define a bean for ViewResolver
+	@NotNull
 	@Bean
 	public DataSource myDataSource() {
 		
@@ -66,6 +68,7 @@ public class AppConfiguration implements WebMvcConfigurer {
 		return myDataSource;
 	}
 	
+	@NotNull
 	private Properties getHibernateProperties() {
 
 		// set hibernate properties
@@ -86,6 +89,7 @@ public class AppConfiguration implements WebMvcConfigurer {
 		return Integer.parseInt(propVal);
 	}	
 	
+	@NotNull
 	@Bean
 	public LocalSessionFactoryBean sessionFactory(){
 		
@@ -100,6 +104,7 @@ public class AppConfiguration implements WebMvcConfigurer {
 		return sessionFactory;
 	}
 	
+	@NotNull
 	@Bean
 	@Autowired
 	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) {

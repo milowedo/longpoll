@@ -2,6 +2,7 @@ package com.SessionLogging;
 
 import com.codahale.metrics.Counter;
 import com.codahale.metrics.MetricRegistry;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +18,7 @@ import java.util.List;
 public class SessionTracker implements HttpSessionListener {
 
     private final Counter activeSessionsCount;
+    @NotNull
     private final List<HttpSession> runningSessions;
 
     private final Logger logger = LoggerFactory.getLogger(HttpSessionListener.class);
@@ -29,13 +31,13 @@ public class SessionTracker implements HttpSessionListener {
         runningSessions = new LinkedList<>();
     }
 
-    public void sessionCreated(final HttpSessionEvent event) {
+    public void sessionCreated(@NotNull final HttpSessionEvent event) {
         logger.info("session employee_id "+ event.getSession().getId());
         this.runningSessions.add(event.getSession());
                 activeSessionsCount.inc();
         logger.info(("\nTOTAL SESSION: " + this.activeSessionsCount.getCount()));
     }
-    public void sessionDestroyed(final HttpSessionEvent event) {
+    public void sessionDestroyed(@NotNull final HttpSessionEvent event) {
         activeSessionsCount.dec();
         logger.info("session destroyed " + event.getSession().getId() +
                 "TOTAL SESSIONS: " + activeSessionsCount.getCount());

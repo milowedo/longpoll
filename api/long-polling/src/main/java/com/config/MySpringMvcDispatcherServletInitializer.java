@@ -1,5 +1,6 @@
 package com.config;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -15,7 +16,8 @@ public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationC
 		return new Class[] { AppConfiguration.class };
 	}
 
-	@Override
+	@NotNull
+    @Override
 	protected String[] getServletMappings() {
 		return new String[] { "/" };
 	}

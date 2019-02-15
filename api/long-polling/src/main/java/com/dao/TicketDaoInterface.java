@@ -6,8 +6,7 @@ import java.util.List;
 
 public interface TicketDaoInterface {
 
-    public void addTicket(Ticket ticket);
-    public Ticket getTicket(int ticketID);
-
+    void addTicket(Ticket ticket);
+    Ticket getTicket(int ticketID);
     List<Ticket> getAllTickets();
 }

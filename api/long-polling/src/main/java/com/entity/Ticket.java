@@ -3,13 +3,15 @@ package com.entity;
 import com.LongPolling.Resolvable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+@EqualsAndHashCode(callSuper = true)
 @Table(name = "ticket")
 @Data
-@Entity
+@Entity(name = "Ticket")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ticket extends Resolvable {

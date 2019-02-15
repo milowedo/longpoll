@@ -9,20 +9,20 @@ export class ChangeEmployeeComponent{
 
   constructor(private httpClient:HttpClient){}
 
-  customerId: string = '5';
+  employeeId: string = '5';
 
   updateProfile() {
-    let num: string =  'http://localhost:8080/employee/trigger/' + this.customerId;
+    let num: string =  'http://localhost:8080/employee/trigger/' + this.employeeId;
     this.httpClient.get(num)
       .subscribe(
         (data: any) => {
           console.log(data);
         },
-        () => this.customerId = "wrong id",
+        () => this.employeeId = "wrong id",
       );
   }
 
   onNameKeyUp(ev: any){
-    this.customerId = ev.target.value;
+    this.employeeId = ev.target.value;
   }
 }

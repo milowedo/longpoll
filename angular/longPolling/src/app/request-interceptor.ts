@@ -1,7 +1,6 @@
 import {Inject, Injectable, InjectionToken} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {TokenStorage} from './TokenStorage';
 import {timeout} from 'rxjs/operators';
 
 export const DEFAULT_TIMEOUT = new InjectionToken<number>('defaultTimeout');
