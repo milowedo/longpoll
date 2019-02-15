@@ -9,7 +9,7 @@ You can use it for having a system of any type of notifications or simply to all
 ---
 ## Idea  behind the project ~(what is longpolling?)
 
-The main thing is that normally server cannot send client any data unless he is asked for it. Only then, he shall respond, sending what he has been asked for.
+The main thing is that normally server cannot send client any data unless he is asked for it. Only then, he shall respond immediately to a request, sending response with what he has been asked for.
 
 ##### Short-polling (standard http behaviour)
 To be up to date with data on the server client can send a request asking for a data, the server side will respond with the data if it has it or with a response containing information that the data is yet not available.
@@ -23,7 +23,8 @@ As soon as the client gets a response, it sends another request for the new data
 
 ---
 
-## Structure
+## Design Patterns
+
 * **State** in RequestPromise, takes care the states that our requests are in
 
 ![STATE design pattern](diagrams/state.png)
@@ -110,9 +111,10 @@ We need the HttpSession as the mapping argument because we will be destroying th
 ```
 Now what we return is an instance of RequestPromise which extends DefferedResult<Resolvable>.
 We acquire it by subscribing to the Overseer, in the argument we pass:
-    class type of expected object(it is important, beacuse we will only receive updates considering this very class type)request's session
-    session
-    previously implemented service(has to implement ServicePoll) that is resposible for actually notifying of the new data
+    
+* class type of expected object(it is important, beacuse we will only receive updates considering this very class type)
+* request's session
+* previously implemented service(has to extend ServicePoll and implement ServiceInterface) that is resposible for actually notifying about the new data
     
 ```java
         return overseer.subscribe(
