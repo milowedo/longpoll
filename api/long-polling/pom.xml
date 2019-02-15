@@ -14,7 +14,7 @@
 		<springframework.session.version>1.2.2.RELEASE</springframework.session.version>
 		<mysql.connector.version>5.1.45</mysql.connector.version>
 		<slf4j.version>1.7.25</slf4j.version>
-		<c3po.version>0.9.5.3</c3po.version>
+		<c3po.version>0.9.5.2</c3po.version>
 		<metrics.version>3.0.1</metrics.version>
 		<jetbrain.annotations.version>16.0.2</jetbrain.annotations.version>
 		<jackson.databind.version>2.9.8</jackson.databind.version>

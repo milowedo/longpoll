@@ -7,12 +7,13 @@ public class MySpringMvcDispatcherServletInitializer extends AbstractAnnotationC
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class[] { AppConfiguration.class };
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class[] { SecurityWebApplicationInitializer.class };
+		return new Class[] { AppConfiguration.class };
 	}
 
 	@NotNull
