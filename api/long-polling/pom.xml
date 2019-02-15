@@ -11,8 +11,13 @@
 	<properties>
 		<springframework.version>5.0.6.RELEASE</springframework.version>
 		<hibernate.version>5.2.16.Final</hibernate.version>
+		<springframework.session.version>1.2.2.RELEASE</springframework.session.version>
 		<mysql.connector.version>5.1.45</mysql.connector.version>
-		<c3po.version>0.9.5.2</c3po.version>
+		<slf4j.version>1.7.25</slf4j.version>
+		<c3po.version>0.9.5.3</c3po.version>
+		<metrics.version>3.0.1</metrics.version>
+		<jetbrain.annotations.version>16.0.2</jetbrain.annotations.version>
+		<jackson.databind.version>2.9.8</jackson.databind.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -25,31 +30,26 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
 			<version>${springframework.version}</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
@@ -59,28 +59,28 @@
 		<dependency>
 			<groupId>org.springframework.session</groupId>
 			<artifactId>spring-session</artifactId>
-			<version>1.2.2.RELEASE</version>
+			<version>${springframework.session.version}</version>
 		</dependency>
 
 		<!-- logging support -->
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-jdk14</artifactId>
-			<version>1.7.25</version>
+			<version>${slf4j.version}</version>
 		</dependency>
 
 		<!-- Add Jackson for JSON converters -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.5</version>
+			<version>${jackson.databind.version}</version>
 		</dependency>
 
+		<!-- metric -->
 		<dependency>
 			<groupId>com.codahale.metrics</groupId>
 			<artifactId>metrics-core</artifactId>
-			<version>3.0.1</version>
+			<version>${metrics.version}</version>
 		</dependency>
 
 		<!-- Hibernate -->
@@ -123,27 +123,30 @@
 		    <artifactId>jaxb-api</artifactId>
 		    <version>2.3.0</version>
 		</dependency>
+
+		<!-- lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.18.2</version>
 		</dependency>
+
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>16.0.2</version>
+            <version>${jetbrain.annotations.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>16.0.2</version>
+            <version>${jetbrain.annotations.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>16.0.2</version>
+            <version>${jetbrain.annotations.version}</version>
             <scope>compile</scope>
         </dependency>
 
