@@ -6,7 +6,7 @@
 	<groupId>com.millosz</groupId>
 	<artifactId>longpolling</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<properties>
 		<springframework.version>5.0.6.RELEASE</springframework.version>
@@ -17,7 +17,7 @@
 		<c3po.version>0.9.5.2</c3po.version>
 		<metrics.version>3.0.1</metrics.version>
 		<jetbrain.annotations.version>16.0.2</jetbrain.annotations.version>
-		<jackson.databind.version>2.9.8</jackson.databind.version>
+		<jackson.databind.version>2.9.5</jackson.databind.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
@@ -109,6 +109,7 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
