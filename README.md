@@ -26,15 +26,15 @@ As soon as the client gets a response, it sends another request for the new data
 ## Structure
 * **State** in RequestPromise, takes care the states that our requests are in
 
-![STATE design pattern](images/state.png)
+![STATE design pattern](diagrams/state.png)
 
 * **Observer** in Overseer and RequestPromise because we have to check whether the right, new data is available to be send back to the Client
 
-![OBSERVER design pattern](images/observer.png)
+![OBSERVER design pattern](diagrams/observer.png)
 
 * **Singleton** in Overseer as we need to access it from different controllers and still have one instance of it that holds info about the requests that are waiting on the server to be resolved.
 
-![SINGLETON design pattern](images/singleton.png)
+![SINGLETON design pattern](diagrams/singleton.png)
 
 
 ---
