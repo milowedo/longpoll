@@ -1,0 +1,10 @@
+.idea/
+api.iml
+*.DS_Store
+*.iml
+/build
+/local.properties
+target/
+/*.classpath
+/.classpath
+/.springBeans
