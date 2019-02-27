@@ -7,4 +7,8 @@ api.iml
 target/
 /*.classpath
 /.classpath
+<<<<<<< HEAD
 /.springBeans
+=======
+/.springBeans
+>>>>>>> 509dec04cf6d3655d86b4bb7433ade9982921702
